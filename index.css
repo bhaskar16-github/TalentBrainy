@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: rgb(211, 234, 241)!important;
+  }
+  .navbar a{
+    color: whitesmoke;
+  }
+  
+  .navbar marquee{
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(148, 220, 231);
+  }
+ 
+  .pagesList a{
+    color: black;
+    margin: 2.5px;
+  }
+  .pagesList .user_menu{
+    display: none;
+    color: black;
+}
+@media only screen and (max-width: 600px){
+  .pagesList .user_menu{
+      display: flex;
+  }
+  .pagesList ul{
+      display: none;
+  }
+  .navbar button{
+    display: none;
+  }
+}
+
+.homePage img{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  border-radius: 10px;
+}
