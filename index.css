@@ -11,10 +11,15 @@
   .navbar a{
     color: whitesmoke;
   }
+  .navbar{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .navbar marquee{
     display: flex;
-    flex-direction: column;
     color: rgb(148, 220, 231);
   }
  
@@ -26,7 +31,14 @@
     display: none;
     color: black;
 }
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 800px ){
+  .navbar{
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar a{
+    font-size: 18px;
+  }
   .pagesList .user_menu{
       display: flex;
   }
