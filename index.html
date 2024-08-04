@@ -22,6 +22,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous">
+    </script>
   </head>
 <body>
 
@@ -34,12 +38,12 @@
         <marquee>Let's Enhance Your Skill</marquee>
       </a>
       <button class="btn btn-info d-flex align-items-center gap-3"
-      type="submit"
+      type="button"
       data-bs-toggle="modal"
-      data-bs-target="#addNewModal"
-      herf="./loginPage.html"> 
+      data-bs-target="#loginPage"
+      > 
       <i class="fa-regular fa-user" mr-3></i> Login
-      </button>
+    </button>
     </div>
     <div class="pagesList container-fluid" style="background-color: rgb(125, 199, 221);">
       <ul class="nav">
@@ -76,22 +80,127 @@
     <img src="images/Main-Title.png" class="img-fluid mx-auto d-block" alt="TALENTBRAINY Image" width="600" height="240" >
 
   </div>
-</body>
 
+  <div class="modal fade" id="signupPage" tabindex="-1" aria-labelledby="signupPageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="signupPageModalLabel">signup</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+              <div class="signupPage m-5" >
+                <h4 class="mt-3">Sign Up</h4>
+                <div class="m-3">
+                  <label for="formFile" class="form-label">Resume</label>
+                  <input class="form-control" type="file" id="formFile">
+                </div>
+
+                <div class="mb-3">
+                    <label for="firstName" class="form-label" required>First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name Here">
+                  </div>
+                  <div class=" mb-3">
+                    <label for="secondName" class="form-label">Second Name</label>
+                    <input type="text" class="form-control" id="secondName" placeholder="second Name Here">
+                  </div>
+                  <div class=" mb-3">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="Ex: talentbrainy@gmail.com">
+                  </div>
+                    <div class="mb-3">
+                      <label for="newPassword" class="form-label">New Password</label>
+                      <input type="password" class="form-control" id="newPassword" placeholder="Enter New password">
+                    </div>
+                    <div class="mb-3">
+                      <label for="conformNewPassword" class="form-label">Conform New Password</label>
+                      <input type="password" class="form-control" id="conformNewPassword" placeholder="Re-enter New Password">
+                    </div>
+
+                  <div class=" mb-3">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  </div>
+                  <div class=" mb-3">
+                    <label for="inputAddress2" class="form-label">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  </div>
+                  <div class=" mb-3">
+                    <labe l for="inputCity" class="form-label">City</labe>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputState" class="form-label">State</label>
+                    <select id="inputState" class="form-select">
+                      <option selected>Choose...</option>
+                      <option> Andhra Pradesh</option>
+                      <option> Karnataka</option>
+                      <option> Kerela</option>
+                      <option> Tamilnadu</option>
+                      <option> Telangana</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputZip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                  </div>
+                  <div class="mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="signupTerms">
+                      <label class="form-check-label" for="signupTerms">
+                        Terms & Conditions
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                  </div>
+              </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginPage" tabindex="-1" aria-labelledby="loginPageModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginPageModalLabel">Login</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="loginPage m-5">
+              <form>
+                <div class="m-3">
+                  <label for="loginInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="loginInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text"></div>
+                </div>
+                <div class="m-3">
+                  <label for="loginInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="loginInputPassword1">
+                </div>
+                <div class="m-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="loginTerms">
+                  <label class="form-check-label" for="loginTerms">Terms & Conditions</label>
+                </div>
+              <a type="link" class="newUser" data-bs-toggle="modal" data-bs-target="#signupPage">New User !</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
 <footer>
   <p> &copy 2024 BhaskarManikanta_Magapu </p>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Scripts -->
     <script src="./index.js"></script>
@@ -110,5 +219,7 @@
       integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
       crossorigin="anonymous"
     ></script>
-  
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js">
+    </script>
+  </body>
 </html>
