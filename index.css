@@ -60,5 +60,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* align-items: center; */
+  align-items: center;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 20px;
+  margin-top: 250px;
+
 }
