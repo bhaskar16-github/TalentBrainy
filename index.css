@@ -31,22 +31,6 @@
     display: none;
     color: black;
 }
-@media only screen and (max-width: 600px ){
-  .navbar{
-    flex-direction: column;
-    width: 100%;
-  }
-  .navbar a{
-    font-size: 18px;
-  }
-
-  .pagesList .user_menu{
-      display: flex;
-  }
-  .pagesList ul{
-      display: none;
-  }
-}
 
 .homePage img{
   display: flex;
@@ -76,8 +60,6 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* max-width: fit-content;
-  justify-content: center; */
 }
 .signupPage input{
   border: double black;
@@ -94,6 +76,49 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* max-width: fit-content;
-  justify-content: center; */
+}
+/* Media Queries for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .pagesList .user_menu {
+        display: flex;
+    }
+
+    .pagesList ul {
+        display: none;
+    }
+
+    .homePage img {
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .coursesPage {
+        flex-direction: column;
+    }
+
+    footer {
+        padding: 10px;
+        margin-top: 100px;
+    }
+
+    .signupPage, .loginPage {
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .signupPage input, .loginPage input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
