@@ -1,36 +1,33 @@
-const express = require("express");
-const dotenv = require("dotenv");
-
-const DbConnection = require ("./DatabaseConnection.js")
-
-const usersRouter = require("./routes/users.js");
-const booksRouter = require("./routes/books.js");
-
-dotenv.config();
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
-DbConnection();
+// Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const port = 8081;
-
-app.use(express.json());
-
-app.get("/",(req,res)=>{
-    res.status(200).json({
-        message: "server started up & running..."
-    });
+// MongoDB Connection
+mongoose.connect('mongodb://localhost:27017/talentBrainy', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('MongoDB connection error:', err));
+  
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB');
 });
- 
-app.use ("/users", usersRouter);
-app.use ("/books", booksRouter);
 
+// Routes
+app.use('/api/auth', authRoutes);
 
-app.get("*",(req,res)=>{
-    res.status(404).json({
-        Message: "This route doesn't exists..."
-    });
-});
-app.listen(port,()=>{
-    console.log (`server is running at ${port}`);
+// Start Server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
