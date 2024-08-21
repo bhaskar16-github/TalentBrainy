@@ -197,10 +197,39 @@
       </div>
      </div>
    </div>
+
+   
   
 <footer>
   <p> &copy 2024 BhaskarManikanta_Magapu </p>
 </footer>
+
+<!-- Request for Back-end -->
+<script>
+  document.getElementById('signupForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      fetch('/signup', {
+          method: 'POST',
+          body: new URLSearchParams(formData)
+      })
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error('Error:', error));
+  });
+  
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      fetch('/login', {
+          method: 'POST',
+          body: new URLSearchParams(formData)
+      })
+      .then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error('Error:', error));
+  });
+  </script>
 
     <!-- Scripts -->
     <script src="./index.js"></script>
